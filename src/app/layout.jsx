@@ -23,13 +23,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      > 
-      <div className="flex w-full">
-        <SideNav />   
-        <div className="flex flex-col w-full">
-        <TopNav />
-        {children}
-        </div>
+      >
+        <div className="flex w-full">
+          <SideNav />
+          <div className="flex flex-col w-full">
+            <TopNav />
+            {children}
+          </div>
         </div>
       </body>
     </html>

@@ -1,7 +1,18 @@
+"use client";
 import Image from "next/image";
-import sideNav from './components/sideNav';
+import sideNav from "./components/sideNav";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-export default function Home() {
+export default function HomePage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      router.push("/login");
+    }
+  }, [router]);
   return (
     // SideBar
     <div className="flex w-full">
@@ -281,7 +292,7 @@ export default function Home() {
         {/* Body Section */}
 
         {/* Page1 */}
-        <div className="flex justify-between p-5">
+        {/* <div className="flex justify-between p-5">
           <div className="flex justify-between bg-blue-100 w-full max-w-[255px] h-full min-h-[157px] max-h-[157px] rounded-lg">
             <div className="flex flex-col p-5 gap-2">
               <div>
@@ -388,7 +399,7 @@ export default function Home() {
               3
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Page2 */}
         {/* <div className="flex flex-col w-full h-full bg-neutral-100 px-8">

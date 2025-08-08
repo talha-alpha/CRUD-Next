@@ -1,7 +1,12 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 import Image from "next/image";
 
-export default function page() {
+export default function SideNav() {
+  const pathname = usePathname();
   return (
     <div className="flex flex-col h-full min-h-[100vh] w-full max-w-[270px] bg-amber-50 justify-between">
       <div className="flex flex-col">
