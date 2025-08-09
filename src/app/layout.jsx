@@ -1,17 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import SideNav from "./components/sideNav";
-import TopNav from "./components/topNav";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "CRUD Next App",
@@ -21,17 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="flex w-full">
-          <SideNav />
-          <div className="flex flex-col w-full">
-            <TopNav />
-            {children}
-          </div>
-        </div>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

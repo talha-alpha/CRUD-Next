@@ -4,8 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function SideNav() {
+  const router = useRouter();
+
+  function handleLogout() {
+    localStorage.removeItem("token");
+    router.push("/login");
+  }
   const pathname = usePathname();
   return (
     <div className="flex flex-col h-full min-h-[100vh] w-full max-w-[270px] bg-amber-50 justify-between">
@@ -36,7 +43,7 @@ export default function SideNav() {
         </div>
         <div className="flex flex-col justify-between w-full">
           <div className="flex flex-col gap-3 justify-center items-center p-5">
-            <div className="flex w-full justify-center items-center py-2.5 gap-3 bg-amber-400 cursor-pointer hover:bg-amber-400 rounded-lg">
+            <div className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
               <svg
                 width="19"
                 height="17"
@@ -57,7 +64,7 @@ export default function SideNav() {
                 </defs>
               </svg>
               <p className="flex font-normal text-sm text-black leading-[100%] items-start">
-                Home
+               <Link href="/">Home</Link> 
               </p>
             </div>
             <div className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
@@ -106,7 +113,7 @@ export default function SideNav() {
               </svg>
 
               <p className="flex font-normal text-sm text-black leading-[100%] items-start">
-                Students
+                <Link href="/components/students">Students</Link>
               </p>
             </div>
             <div className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
@@ -124,7 +131,7 @@ export default function SideNav() {
               </svg>
 
               <p className="flex font-normal text-sm text-black leading-[100%] items-start">
-                Payment
+                <Link href="/components/payments">Payment</Link>
               </p>
             </div>
             <div className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
@@ -174,7 +181,7 @@ export default function SideNav() {
         </div>
         <div className="flex justify-center gap-3 mt-20 mx-5 py-3 cursor-pointer hover:bg-amber-400 rounded-lg">
           <div className="flex justify-center gap-3">
-            <p className="flex font-normal text-sm text-black leading-[100%] items-center">
+            <p onClick={handleLogout} className="flex font-normal text-sm text-black leading-[100%] items-center">
               Logout
             </p>
             <svg

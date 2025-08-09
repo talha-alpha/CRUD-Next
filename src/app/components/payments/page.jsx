@@ -1,7 +1,24 @@
-import React from 'react'
+"use client";
 
-export default function page() {
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import SideNav from "../sideNav";
+import TopNav from "../topNav";
+import withAuth from "../withAuth";
+
+
+function PaymentsPage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) router.push("/login");
+  }, [router]);
   return (
+  <div className="flex w-full">
+      <SideNav />
+      <div className="flex flex-col w-full">
+        <TopNav />
     <div className="flex flex-col w-full h-full bg-neutral-100 px-8">
           <div className="flex justify-between w-full py-4">
             <div className="flex justify-start items-center">
@@ -54,6 +71,7 @@ export default function page() {
                 Date
               </th>
               <th></th>
+              <th></th>
             </tr>
             <tr className="flex justify-between items-center w-full bg-white rounded-lg p-3">
               <td className="flex text-black font-normal text-sm">Karthi</td>
@@ -85,5 +103,9 @@ export default function page() {
             </tr>
           </table>
         </div>
+        </div>
+        </div>
   )
 }
+
+export default withAuth(PaymentsPage);
