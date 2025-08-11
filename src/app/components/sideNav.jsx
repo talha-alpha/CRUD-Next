@@ -13,6 +13,10 @@ export default function SideNav() {
     localStorage.removeItem("token");
     router.push("/login");
   }
+
+  const handleLinkClick = (e) => {
+    e.stopPropagation();
+  };
   const pathname = usePathname();
   return (
     <div className="flex flex-col h-full min-h-[100vh] w-full max-w-[270px] bg-amber-50 justify-between">
@@ -43,7 +47,8 @@ export default function SideNav() {
         </div>
         <div className="flex flex-col justify-between w-full">
           <div className="flex flex-col gap-3 justify-center items-center p-5">
-            <div className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
+            <Link href="/" onClick={handleLinkClick} className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
+            <div className="flex w-full justify-center items-center gap-3">              
               <svg
                 width="19"
                 height="17"
@@ -63,10 +68,11 @@ export default function SideNav() {
                   </clipPath>
                 </defs>
               </svg>
-              <p className="flex font-normal text-sm text-black leading-[100%] items-start">
-               <Link href="/">Home</Link> 
-              </p>
+              <p className="flex w-full max-w-[50px] font-normal text-sm text-black leading-[100%] items-start">
+               Home 
+              </p>            
             </div>
+            </Link>
             <div className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
               <svg
                 width="12"
@@ -93,12 +99,12 @@ export default function SideNav() {
                 </defs>
               </svg>
 
-              <p className="flex font-normal text-sm text-black leading-[100%] items-start">
+              <p className="flex w-full max-w-[50px]  font-normal text-sm text-black leading-[100%] items-start">
                 Course
               </p>
             </div>
-
-            <div className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
+<Link href="/students" onClick={handleLinkClick} className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
+            <div className="flex w-full justify-center items-center gap-3">
               <svg
                 width="20"
                 height="16"
@@ -112,11 +118,13 @@ export default function SideNav() {
                 />
               </svg>
 
-              <p className="flex font-normal text-sm text-black leading-[100%] items-start">
-                <Link href="/components/students">Students</Link>
+              <p className="flex w-full max-w-[50px]  font-normal text-sm text-black leading-[100%] items-start">
+                Students
               </p>
             </div>
-            <div className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
+            </Link>
+            <Link href="/payments" onClick={handleLinkClick} className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
+            <div className="flex w-full justify-center items-center gap-3">
               <svg
                 width="15"
                 height="17"
@@ -130,10 +138,11 @@ export default function SideNav() {
                 />
               </svg>
 
-              <p className="flex font-normal text-sm text-black leading-[100%] items-start">
-                <Link href="/components/payments">Payment</Link>
+              <p className="flex w-full max-w-[50px]  font-normal text-sm text-black leading-[100%] items-start">
+                Payment
               </p>
             </div>
+            </Link>
             <div className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
               <svg
                 width="13"
@@ -155,7 +164,7 @@ export default function SideNav() {
                 </defs>
               </svg>
 
-              <p className="flex font-normal text-sm text-black leading-[100%] items-start">
+              <p className="flex w-full max-w-[50px]  font-normal text-sm text-black leading-[100%] items-start">
                 Report
               </p>
             </div>
@@ -173,15 +182,17 @@ export default function SideNav() {
                 />
               </svg>
 
-              <p className="flex font-normal text-sm text-black leading-[100%] items-start">
+              <p className="flex w-full max-w-[50px]  font-normal text-sm text-black leading-[100%] items-start">
                 Settings
               </p>
             </div>
           </div>
         </div>
-        <div className="flex justify-center gap-3 mt-20 mx-5 py-3 cursor-pointer hover:bg-amber-400 rounded-lg">
-          <div className="flex justify-center gap-3">
-            <p onClick={handleLogout} className="flex font-normal text-sm text-black leading-[100%] items-center">
+        
+      </div>
+      <div className="flex justify-center gap-3 h-full max-h-[calc(100vh-530px)] mx-5 mb-10 py-3 cursor-pointer hover:bg-amber-400 rounded-lg">
+          <div onClick={handleLogout} className="flex justify-center gap-3">
+            <p className="flex font-normal text-sm text-black leading-[100%] items-center">
               Logout
             </p>
             <svg
@@ -198,7 +209,6 @@ export default function SideNav() {
             </svg>
           </div>
         </div>
-      </div>
     </div>
   );
 }

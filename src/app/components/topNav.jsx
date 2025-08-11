@@ -1,10 +1,15 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 export default function TopNav() {
+    const router = useRouter();
   return (
     <div className="flex justify-between w-full px-6 py-3 h-fit items-center">
       <div className="flex items-start">
+        <Link href="/">
         <svg
           width="18"
           height="18"
@@ -29,12 +34,13 @@ export default function TopNav() {
             </clipPath>
           </defs>
         </svg>
+        </Link>
       </div>
       <div className="flex justify-end gap-6 items-center">
         <div className="relative w-50">
           <input
             type="text"
-            className="w-full text-sm text-neutral-400 border border-gray-300 rounded-md resize-none px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full text-sm text-neutral-400 border border-gray-300 rounded-md resize-none px-2 py-1 focus:outline-none focus:border-amber-400 focus:ring-0"
             placeholder="Search..."
           />
           <div className="absolute top-2 right-3 pointer-events-none">

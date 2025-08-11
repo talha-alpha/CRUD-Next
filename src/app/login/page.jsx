@@ -37,7 +37,7 @@ export default function LoginPage() {
             <p className="font-bold text-3xl text-black">CRUD OPERATIONS</p>
           </div>
           <div className="flex flex-col items-center gap-3">
-            <p className="text-2xl font-semibold">SIGN IN</p>
+            <p className="text-2xl text-black font-semibold">SIGN IN</p>
             <p className="text-neutral-400 text-sm">
               Enter your credentials to access your account
             </p>
@@ -53,7 +53,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-full px-3 py-2.5 text-xs text-neutral-400 border border-neutral-200 rounded-md focus:outline-none"
+                className="w-full px-3 py-2.5 text-xs text-neutral-400 border border-neutral-200 rounded-md focus:outline-none focus:border-amber-500 focus:ring-0"
               />
             </div>
             <div className="flex flex-col gap-2">
@@ -63,7 +63,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
-                className="w-full px-3 py-2.5 text-xs text-neutral-400 border border-neutral-200 rounded-md focus:outline-none"
+                className="w-full px-3 py-2.5 text-xs text-neutral-400 border border-neutral-200 rounded-md focus:outline-none focus:border-amber-500 focus:ring-0"
               />
             </div>
           </div>
@@ -77,7 +77,7 @@ export default function LoginPage() {
 
           <div className="flex justify-center text-sm font-semibold text-neutral-400 gap-1">
             Forgot your password?
-            <span className="text-amber-400 underline cursor-pointer">
+            <span className="text-amber-400 hover:text-amber-500 underline cursor-pointer">
               Reset Password
             </span>
           </div>

@@ -2,9 +2,9 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import SideNav from "../sideNav";
-import TopNav from "../topNav";
-import withAuth from "../withAuth";
+import SideNav from "../components/sideNav";
+import TopNav from "../components/topNav";
+import withAuth from "../components/withAuth";
 
 
 function PaymentsPage() {
@@ -51,6 +51,7 @@ function PaymentsPage() {
             </div>
           </div>
           <table className="flex flex-col w-full justify-center mx-auto">
+            <thead>
             <tr className="flex justify-between items-center p-5 border-t-[1px] border-neutral-200">
               <th className="flex text-xs text-neutral-400 font-semibold">
                 Name
@@ -73,6 +74,8 @@ function PaymentsPage() {
               <th></th>
               <th></th>
             </tr>
+            </thead>
+            <tbody className="flex flex-col gap-2">
             <tr className="flex justify-between items-center w-full bg-white rounded-lg p-3">
               <td className="flex text-black font-normal text-sm">Karthi</td>
               <td className="flex text-black font-normal text-sm">First</td>
@@ -101,6 +104,7 @@ function PaymentsPage() {
                 </svg>
               </td>
             </tr>
+            </tbody>
           </table>
         </div>
         </div>
