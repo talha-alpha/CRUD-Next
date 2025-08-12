@@ -75,7 +75,7 @@ function PaymentsPage() {
               <th></th>
             </tr>
             </thead>
-            <tbody className="flex flex-col gap-2">
+            <tbody className="flex flex-col">
             <tr className="flex justify-between items-center w-full bg-white rounded-lg p-3">
               <td className="flex text-black font-normal text-sm">Karthi</td>
               <td className="flex text-black font-normal text-sm">First</td>

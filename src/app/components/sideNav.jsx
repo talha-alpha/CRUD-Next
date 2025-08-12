@@ -14,9 +14,12 @@ export default function SideNav() {
     router.push("/login");
   }
 
-  const handleLinkClick = (e) => {
+   const handleClick = (e) => {
     e.stopPropagation();
+    e.preventDefault();
+    router.push('/');
   };
+
   const pathname = usePathname();
   return (
     <div className="flex flex-col h-full min-h-[100vh] w-full max-w-[270px] bg-amber-50 justify-between">
@@ -47,7 +50,8 @@ export default function SideNav() {
         </div>
         <div className="flex flex-col justify-between w-full">
           <div className="flex flex-col gap-3 justify-center items-center p-5">
-            <Link href="/" onClick={handleLinkClick} className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
+            <Link href="/"onClick={handleClick}
+            className={`flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer rounded-lg ${pathname === "/" ? "bg-amber-400" : "hover:bg-amber-400"}`}>
             <div className="flex w-full justify-center items-center gap-3">              
               <svg
                 width="19"
@@ -103,7 +107,7 @@ export default function SideNav() {
                 Course
               </p>
             </div>
-<Link href="/students" onClick={handleLinkClick} className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
+<Link href="/students"  className={`flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer rounded-lg ${pathname === "/students" ? "bg-amber-400" : "hover:bg-amber-400"}`}>
             <div className="flex w-full justify-center items-center gap-3">
               <svg
                 width="20"
@@ -123,7 +127,8 @@ export default function SideNav() {
               </p>
             </div>
             </Link>
-            <Link href="/payments" onClick={handleLinkClick} className="flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer hover:bg-amber-400 rounded-lg">
+            <Link href="/payments" className={`flex w-full justify-center items-center py-2.5 gap-3 cursor-pointer rounded-lg ${pathname === "/payments" ? "bg-amber-400" : "hover:bg-amber-400"}`}>
+
             <div className="flex w-full justify-center items-center gap-3">
               <svg
                 width="15"
