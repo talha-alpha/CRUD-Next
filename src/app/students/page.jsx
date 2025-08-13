@@ -139,16 +139,16 @@ function StudentsPage() {
           <table className="flex flex-col w-full justify-center mx-auto">
             <thead>
               <tr className="flex justify-between items-center p-5 border-t-[1px] border-neutral-200">
-                <th></th>
-                <th className="flex text-xs text-neutral-400 font-semibold">Name</th>
-                <th className="flex text-xs text-neutral-400 font-semibold">Email</th>
-                <th className="flex text-xs text-neutral-400 font-semibold">Phone</th>
-                <th className="flex text-xs text-neutral-400 font-semibold">Enroll Number</th>
-                <th className="flex text-xs text-neutral-400 font-semibold">Date of admission</th>
-                <th className="flex text-xs text-neutral-400 font-semibold"></th>
+                <th className="flex text-xs text-center text-neutral-400 font-semibold w-full max-w-[150px] min-w-[100px]"></th>
+                <th className="flex text-xs text-center text-neutral-400 font-semibold w-full max-w-[150px] min-w-[100px]">Name</th>
+                <th className="flex text-xs text-center text-neutral-400 font-semibold w-full max-w-[150px] min-w-[100px]">Email</th>
+                <th className="flex text-xs text-center text-neutral-400 font-semibold w-full max-w-[150px] min-w-[100px]">Phone</th>
+                <th className="flex text-xs text-center text-neutral-400 font-semibold w-full max-w-[150px] min-w-[100px]">Enroll Number</th>
+                <th className="flex text-xs text-center text-neutral-400 font-semibold w-full max-w-[150px] min-w-[100px]">Date of admission</th>
+                <th className="flex text-xs text-center text-neutral-400 font-semibold w-full max-w-[150px] min-w-[100px]"></th>
               </tr>
             </thead>
-            <tbody className="flex flex-col gap-2">
+            <tbody className="flex items-center flex-col gap-2">
               {students.map((student) => (
                 <tr
                   key={student.id}
@@ -160,16 +160,16 @@ function StudentsPage() {
                       alt="Student"
                       width={65}
                       height={65}
-                      className="rounded-lg"
+                      className="rounded-lg w-16 max-w-16 h-16 max-h-16 object-cover"
                       priority
                     />
                   </td>
-                  <td className="flex text-black font-normal text-sm">{student.name}</td>
-                  <td className="flex text-black font-normal text-sm">{student.email}</td>
-                  <td className="flex text-black font-normal text-sm">{student.phone}</td>
-                  <td className="flex text-black font-normal text-sm">{student.enroll}</td>
-                  <td className="flex text-black font-normal text-sm">{student.admissionDate}</td>
-                  <td className="flex gap-4">
+                  <td className="flex justify-center text-black font-normal text-sm w-full max-w-[150px] min-w-[50px]">{student.name}</td>
+                  <td className="flex justify-center text-black font-normal text-sm w-full max-w-[150px] min-w-[50px] truncate">{student.email}</td>
+                  <td className="flex justify-center text-black font-normal text-sm w-full max-w-[150px] min-w-[50px] truncate">{student.phone}</td>
+                  <td className="flex justify-center text-black font-normal text-sm w-full max-w-[150px] min-w-[100px] truncate">{student.enroll}</td>
+                  <td className="flex justify-center text-black font-normal text-sm w-full max-w-[150px] min-w-[100px] truncate">{student.admissionDate}</td>
+                  <td className="flex justify-center gap-6 w-full max-w-[150px] min-w-[100px]">
                     {/* Edit Icon */}
                     <svg
                       onClick={() => handleEditStudent(student)}

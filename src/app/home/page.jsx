@@ -1,19 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import withAuth from "../components/withAuth";
 
 function Home() {
-  const router = useRouter();
   return (
     <div className="p-5">
-      <div className="flex justify-between p-5 w-full max-w-[1200px] mx-auto">
+      <div className="flex p-5 w-full justify-center max-w-[1400px] mx-auto gap-8 flex-wrap">
         <Link
           href="/students"
           className="flex flex-col justify-between bg-blue-100 w-full max-w-[255px] h-full min-h-[157px] max-h-[157px] rounded-lg"
         >
-          <div className="flex flex-col justify-betweenw-full max-w-[255px] h-full min-h-[157px] max-h-[157px]">
+          <div className="flex flex-col justify-between w-full max-w-[255px] h-full min-h-[157px] max-h-[157px]">
             <div className="flex flex-col pl-5 py-5 gap-2">
               <div>
                 <svg

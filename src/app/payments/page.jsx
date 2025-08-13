@@ -53,43 +53,43 @@ function PaymentsPage() {
           <table className="flex flex-col w-full justify-center mx-auto">
             <thead>
             <tr className="flex justify-between items-center p-5 border-t-[1px] border-neutral-200">
-              <th className="flex text-xs text-neutral-400 font-semibold">
+              <th className="flex text-xs text-neutral-400 font-semibold w-full max-w-[150px] min-w-[100px]">
                 Name
               </th>
-              <th className="flex text-xs text-neutral-400 font-semibold">
+              <th className="flex text-xs text-neutral-400 font-semibold w-full max-w-[150px] min-w-[100px]">
                 Payment Schedule
               </th>
-              <th className="flex text-xs text-neutral-400 font-semibold">
+              <th className="flex text-xs text-neutral-400 font-semibold w-full max-w-[150px] min-w-[100px]">
                 Bill Number
               </th>
-              <th className="flex text-xs text-neutral-400 font-semibold">
+              <th className="flex text-xs text-neutral-400 font-semibold w-full max-w-[150px] min-w-[100px]">
                 Amount Paid
               </th>
-              <th className="flex text-xs text-neutral-400 font-semibold">
+              <th className="flex text-xs text-neutral-400 font-semibold w-full max-w-[150px] min-w-[100px]">
                 Balance amount
               </th>
-              <th className="flex text-xs text-neutral-400 font-semibold">
+              <th className="flex text-xs text-neutral-400 font-semibold w-full max-w-[150px] min-w-[100px]">
                 Date
               </th>
-              <th></th>
-              <th></th>
+              <th className="flex text-xs text-neutral-400 font-semibold w-full max-w-[30px] min-w-[20px]"></th>
+              
             </tr>
             </thead>
             <tbody className="flex flex-col">
             <tr className="flex justify-between items-center w-full bg-white rounded-lg p-3">
-              <td className="flex text-black font-normal text-sm">Karthi</td>
-              <td className="flex text-black font-normal text-sm">First</td>
-              <td className="flex text-black font-normal text-sm">00012223</td>
-              <td className="flex text-black font-normal text-sm">
+              <td className="flex text-black font-normal text-sm w-full max-w-[150px] min-w-[100px]">Karthi</td>
+              <td className="flex justify-center text-black font-normal text-sm w-full max-w-[150px] min-w-[100px]">First</td>
+              <td className="flex justify-center text-black font-normal text-sm w-full max-w-[150px] min-w-[100px]">00012223</td>
+              <td className="flex justify-center text-black font-normal text-sm w-full max-w-[150px] min-w-[100px]">
                 INR 35,000
               </td>
-              <td className="flex text-black font-normal text-sm">
+              <td className="flex justify-center text-black font-normal text-sm w-full max-w-[150px] min-w-[100px]">
                 INR 55,000
               </td>
-              <td className="flex text-black font-normal text-sm">
+              <td className="flex justify-center text-black font-normal text-sm w-full max-w-[150px] min-w-[100px]">
                 08-Dec, 2021
               </td>
-              <td className="flex p-5">
+              <td className="flex justify-center py-5 w-full max-w-[100px] min-w-[100px]">
                 <svg
                   width="15"
                   height="12"
